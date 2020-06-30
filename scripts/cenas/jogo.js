@@ -34,7 +34,6 @@ class Jogo {
     
     powerUps.push(score);
     powerUps.push(score);
-    powerUps.push(score);
     powerUps.push(gravidade0);
     powerUps.push(gravidade0);
     powerUps.push(maisVida);
