@@ -1,0 +1,26 @@
+function preload() {
+  imagemCenario1 = loadImage('imagens/cenario/cenario1.png');
+  imagemCenario2 = loadImage('imagens/cenario/cenario2.png');
+  imagemPaisagem = loadImage('imagens/cenario/paisagem.png');
+  imagemPersonagem = loadImage('imagens/personagem/correndo.png');
+  imagemCobraVerde = loadImage('imagens/inimigos/greenSnake.png');
+  imagemCobraVermelha = loadImage('imagens/inimigos/redSnake.png');
+  imagemLoboMarrom = loadImage('imagens/inimigos/loboMarrom.png');
+  imagemTouro = loadImage('imagens/inimigos/touro.png');
+  imagemBarril = loadImage('imagens/inimigos/barril.png');
+  imagemGameOver = loadImage('imagens/assets/game-over.png');
+  imagemIntro1 = loadImage('imagens/assets/intro1.png');
+  imagemIntro2 = loadImage('imagens/assets/intro2.png');
+  imagemTelaInicial = loadImage('imagens/assets/telaInicial.png');
+  imagemVida = loadImage('imagens/assets/vida.png');
+  imagemGravidade = loadImage('imagens/assets/gravidadeZero.png');
+  imagemScore = loadImage('imagens/assets/score.png');
+  musicaJogo = loadSound('sons/Horses_Trains.mp3');
+  somPuloNormal = loadSound('sons/puloNormal.wav');
+  somPuloDuplo = loadSound('sons/puloDuplo.wav');
+  somDano = loadSound('sons/dano.mp3');
+  somGameOver = loadSound('sons/gameOver.mp3');
+  fonteTelaInicial = loadFont('fontes/fonteTelaInicial.otf');
+  fonteGameOver = loadFont('fontes/RioGrande.ttf');
+  fonteDisc = loadFont('fontes/Go2OldWestern.otf');
+}
