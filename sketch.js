@@ -31,6 +31,9 @@ function mousePressed() {
   if(cenaAtual === 'intro2'){
     intro2.mousePressed();
   }
+  if(cenaAtual === 'jogo'){
+    pause.mousePressed();
+  }
 }
 
 function draw() {

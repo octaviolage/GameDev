@@ -7,7 +7,7 @@ class Vida {
    this.largura = 28;
    this.altura = 25;
    this.xInicial = 20;
-   this.y = 15;
+   this.y = 30;
    
    this.cont = 0;
  }
@@ -36,7 +36,7 @@ class Vida {
   }
   
   somaVida() {
-    if(this.vidas <= this.total) {
+    if(this.vidas < this.total) {
        this.vidas++;
     }
   }

@@ -8,6 +8,7 @@ function preload() {
   imagemLoboMarrom = loadImage('imagens/inimigos/loboMarrom.png');
   imagemTouro = loadImage('imagens/inimigos/touro.png');
   imagemBarril = loadImage('imagens/inimigos/barril.png');
+  imagemCorvo = loadImage('imagens/inimigos/corvo.png');
   imagemGameOver = loadImage('imagens/assets/game-over.png');
   imagemIntro1 = loadImage('imagens/assets/intro1.png');
   imagemIntro2 = loadImage('imagens/assets/intro2.png');
@@ -15,10 +16,12 @@ function preload() {
   imagemVida = loadImage('imagens/assets/vida.png');
   imagemGravidade = loadImage('imagens/assets/gravidadeZero.png');
   imagemScore = loadImage('imagens/assets/score.png');
+  imagemPause = loadImage('imagens/assets/pause.png');
   musicaJogo = loadSound('sons/Horses_Trains.mp3');
   somPuloNormal = loadSound('sons/puloNormal.wav');
   somPuloDuplo = loadSound('sons/puloDuplo.wav');
   somDano = loadSound('sons/dano.mp3');
+  somPowerUp = loadSound('sons/powerUp.mp3');
   somGameOver = loadSound('sons/gameOver.mp3');
   fonteTelaInicial = loadFont('fontes/fonteTelaInicial.otf');
   fonteGameOver = loadFont('fontes/RioGrande.ttf');

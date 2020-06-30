@@ -3,35 +3,40 @@ class Jogo {
     this.inimigoAtual = 0;
     this.powerUpAtual = 0;
     this.tocaMusica = false;
+    this.textinho = '';
+    this.contText = 15;
   }
 
   setup() {
     paisagem = new Cenario(imagemPaisagem, 1);
     cenario2 = new Cenario(imagemCenario2, 2);
-    cenario1 = new Cenario(imagemCenario1, 3);
+    cenario1 = new Cenario(imagemCenario1, 4);
     
-    personagem = new Personagem(matrizPersonagem, imagemPersonagem, 0, 20, 110, 135, 140, 140);
+    personagem = new Personagem(matrizPersonagem, imagemPersonagem, width/5, 20, 110, 135, 140, 140);
     
-    const cobraVerde = new Inimigo(matrizCobra, imagemCobraVerde, width, 20, 60, 61, 75, 76, 10);
-    const loboMarrom = new Inimigo(matrizLobo, imagemLoboMarrom, width, 20, 230, 82, 115, 42, 16);
-    const touro = new Inimigo(matrizTouro, imagemTouro, width, 20, 220, 150, 200, 140, 16);
-    const barril = new Inimigo(matrizBarril, imagemBarril, width, 20, 75, 54, 75, 54, 16);
+    //const cobraVerde = new Inimigo(matrizCobra, imagemCobraVerde, width, 20, 60, 61, 75, 76, 10);
+    loboMarrom = new Inimigo(matrizLobo, imagemLoboMarrom, width, 20, 230, 82, 115, 42, 16);
+    touro = new Inimigo(matrizTouro, imagemTouro, width, 20, 220, 150, 200, 140, 16);
+    barril = new Inimigo(matrizBarril, imagemBarril, width, 20, 75, 54, 75, 54, 16);
+    corvo = new InimigoVoador(matrizCorvo, imagemCorvo, width, 90, 100, 80, 100, 80, 24);
     
     const gravidade0 = new PowerUp(matrizGravidade, imagemGravidade, width, 35, 35, 35, 73, 87, 'gravidadeZero');
     const maisVida = new PowerUp([[0,0],[28, 0]], imagemVida, width, 35, 35, 35, 28, 25, 'maisVida');
-    const score = new PowerUp(matrizScore, imagemScore, width, 35, 35, 35, 90, 90, 'score');
+    const score = new PowerUp(matrizScore, imagemScore, width, 35, 35, 35, 85, 75, 'score');
     
     pontuacao = new Pontuacao();
-    vida = new Vida(6, 3);
+    vida = new Vida(5, 3);
+    
+    pause = new Pause(matrizPause, imagemPause, width/2-20, 30, 43, 38);
     
     inimigos.push(barril);
-    inimigos.push(cobraVerde);
     inimigos.push(barril);
     inimigos.push(barril);
-    inimigos.push(loboMarrom);
     inimigos.push(loboMarrom);
     inimigos.push(touro);
+    inimigos.push(touro);
     
+    powerUps.push(score);
     powerUps.push(score);
     powerUps.push(score);
     powerUps.push(gravidade0);
@@ -46,7 +51,10 @@ class Jogo {
   }
   
   mousePressed() {
-    personagem.pula();
+    if(!pause.colidindo()){
+      personagem.pula();
+    }
+    
   }
 
   draw() {  
@@ -64,6 +72,7 @@ class Jogo {
     cenario1.move();
     
     vida.draw();
+    pause.draw();
     
     personagem.exibe();
     personagem.aplicaGravidade();
@@ -76,10 +85,21 @@ class Jogo {
     
     if (inimigoVisivel) {
       this.inimigoAtual = parseInt(random(0, inimigos.length));
-      inimigo.velocidade = random(12, 25);
+      inimigo.velocidade = random(12, 30);
     }
+    
+    const inimigoVoadorVisivel = corvo.x < -corvo.largura; 
 
-    if (personagem.colidindo(inimigo)) {
+    corvo.exibe();
+    corvo.move();
+    
+    if (inimigoVoadorVisivel) {
+      corvo.velocidade = random(12, 30);
+      corvo.y = random(height-50, height/2);
+    }
+    
+
+    if (personagem.colidindo(inimigo) || personagem.colidindo(corvo)) {
       vida.perdeVida();
       personagem.dano();
       somDano.play()
@@ -93,7 +113,7 @@ class Jogo {
     const powerUp = powerUps[parseInt(this.powerUpAtual)];
     const powerUpVisivel = powerUp.x < -powerUp.largura;
     
-    if(pontuacao.getPontos() % 200 === 0 && powerUpVisivel && pontuacao.getPontos() != 0) {
+    if(pontuacao.getPontos() % 180 === 0 && powerUpVisivel && pontuacao.getPontos() != 0) {
       this.powerUpAtual = random(0, powerUps.length);
       powerUp.mudaY(random(height - height/3, height - height/4.5));
       powerUp.aparece();
@@ -103,17 +123,33 @@ class Jogo {
     powerUp.move();
     
     if (personagem.buff(powerUp)) {
+        textFont(fonteGameOver);
       if(powerUp.funcao === 'gravidadeZero'){
+        this.textinho = '(Gravidade Lunar)';
         personagem.zeroGravidade();
       }
       if(powerUp.funcao === 'maisVida'){
+        this.textinho = '(1 vida)';
         vida.somaVida();
       }
       if(powerUp.funcao === 'score'){
+        this.textinho = '(50 pontos)';
         pontuacao.somaPontos();
       }
+      somPowerUp.play();
       powerUp.x = -width;
+      this.contText = 0;
+      
     }
+    if(this.contText < 15){
+      textAlign(CENTER);
+      fill('#fff');
+      textSize(20);
+      text(this.textinho, personagem.x + personagem.largura/2, height * 0.8);
+      this.contText++;
+    }
+    
+    
 
     pontuacao.exibe();
     pontuacao.adicionarPonto();

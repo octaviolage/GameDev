@@ -73,6 +73,7 @@ class Personagem extends Animacao{
       inimigo.y,
       inimigo.largura * precisao,
       inimigo.altura * precisao);
+    
     return colisao;
   }
   

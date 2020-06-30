@@ -1,25 +1,27 @@
 class GameOver {
  constructor() {
    this.tocaMusica = false;
-   this.cont = 0;
+   this.cont = false;
  }
   
    mousePressed() {
-     personagem.tornaInvencivel();
-     vida.vidas = vida.inicial;
-     vida.draw();
-     pontuacao.pontos = 0;
-     jogo.setup();
-     personagem.tornaInvencivel();
-     cenaAtual = 'jogo';
-     jogo.tocaMusica = false;
-     loop();
+     if(this.cont){
+        personagem.tornaInvencivel();
+       vida.vidas = vida.inicial;
+       vida.draw();
+       pontuacao.pontos = 0;
+       jogo.setup();
+       personagem.tornaInvencivel();
+       cenaAtual = 'jogo';
+       jogo.tocaMusica = false;
+       loop();
+      }
   }
   
   draw(){
     jogo.draw();
     
-    noLoop()
+    noLoop();
     if(!this.tocaMusica){
         somGameOver.play();
         this.tocaMusica = true;
@@ -28,7 +30,9 @@ class GameOver {
     setTimeout(() => {
       this.imagemDeFundo();
       this.texto();
+      this.cont = true;
     }, 2000);
+    
   }
   
   imagemDeFundo() {

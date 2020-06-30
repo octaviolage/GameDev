@@ -6,8 +6,14 @@ let personagem;
 let pontuacao;
 let recorde = 0;
 let vida;
+let pause;
 
-let cenaAtual = 'telaInicial';
+let loboMarrom;
+let touro;
+let barril;
+let corvo;
+
+let cenaAtual = 'jogo';
 let cenas;
 let jogo;
 let telaInicial;
@@ -25,18 +31,21 @@ let imagemCobraVermelha;
 let imagemLoboMarrom;
 let imagemTouro;
 let imagemBarril;
+let imagemCorvo;
 let imagemGameOver;
 let imagemTelaInicial;
 let imagemGravidade;
 let imagemIntro1;
 let imagemIntro2;
 let imagemScore;
+let imagemPause;
 
 let musicaJogo;
 let somPuloNormal;
 let somPuloDuplo;
 let somDano;
 let somGameOver;
+let somPowerUp;
 
 let fonteTelaInicial;
 let fonteGameOver;
@@ -75,6 +84,13 @@ const matrizBarril = [
     [75,54],
   ];
 
+const matrizCorvo = [
+    [0,0],
+    [100,0],
+    [0,80],
+    [100,80],
+  ];
+
 const matrizPersonagem = [
   [0,0],
   [140,0],
@@ -93,9 +109,16 @@ const matrizGravidade = [
 
 const matrizScore = [
   [0,0],
-  [90,0],
-  [0,90],
-  [90,90],
+  [85,0],
+  [0,75],
+  [85,75],
+];
+
+const matrizPause = [
+  [0,0],
+  [43,0],
+  [0,38],
+  [43,38],
 ];
 
 const inimigos = [];
