@@ -13,7 +13,7 @@ let touro;
 let barril;
 let corvo;
 
-let cenaAtual = 'jogo';
+let cenaAtual = 'telaInicial';
 let cenas;
 let jogo;
 let telaInicial;
