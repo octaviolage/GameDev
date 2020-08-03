@@ -12,13 +12,13 @@ class Jogo {
     cenario2 = new Cenario(imagemCenario2, 2);
     cenario1 = new Cenario(imagemCenario1, 4);
     
-    personagem = new Personagem(matrizPersonagem, imagemPersonagem, width/5, 20, 110, 135, 140, 140);
+    personagem = new Personagem(matrizPersonagem, imagemPersonagem, width/5, 20, width/10, width/10, 140, 140);
     
     //const cobraVerde = new Inimigo(matrizCobra, imagemCobraVerde, width, 20, 60, 61, 75, 76, 10);
-    loboMarrom = new Inimigo(matrizLobo, imagemLoboMarrom, width, 20, 230, 82, 115, 42, 16);
-    touro = new Inimigo(matrizTouro, imagemTouro, width, 20, 220, 150, 200, 140, 16);
-    barril = new Inimigo(matrizBarril, imagemBarril, width, 20, 75, 54, 75, 54, 16);
-    corvo = new InimigoVoador(matrizCorvo, imagemCorvo, width, 90, 100, 80, 100, 80, 24);
+    loboMarrom = new Inimigo(matrizLobo, imagemLoboMarrom, width, 20, width/6, height/8, 115, 42, 16);
+    touro = new Inimigo(matrizTouro, imagemTouro, width, 20, width/5, height/4, 200, 140, 16);
+    barril = new Inimigo(matrizBarril, imagemBarril, width, 20, width/11, height/11, 75, 54, 16);
+    corvo = new InimigoVoador(matrizCorvo, imagemCorvo, width, 90, width/10, height/9, 100, 80, 24);
     
     const gravidade0 = new PowerUp(matrizGravidade, imagemGravidade, width, 35, 35, 35, 73, 87, 'gravidadeZero');
     const maisVida = new PowerUp([[0,0],[28, 0]], imagemVida, width, 35, 35, 35, 28, 25, 'maisVida');
@@ -113,7 +113,7 @@ class Jogo {
     const powerUp = powerUps[parseInt(this.powerUpAtual)];
     const powerUpVisivel = powerUp.x < -powerUp.largura;
     
-    if(pontuacao.getPontos() % 180 === 0 && powerUpVisivel && pontuacao.getPontos() != 0) {
+    if(pontuacao.getPontos() % 110 === 0 && powerUpVisivel && pontuacao.getPontos() != 0) {
       this.powerUpAtual = random(0, powerUps.length);
       powerUp.mudaY(random(height - height/3, height - height/4.5));
       powerUp.aparece();

@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(740, 360);
   jogo = new Jogo();
   jogo.setup();
   telaInicial = new TelaInicial();

@@ -28,7 +28,7 @@ class Intro1 {
     fill('#fff');
     textSize(22);
     if(this.cont > 15){
-      text('Mal amanhecia o dia e nosso herói já estava de volta a estrada.', width/2, height/3.2);
+      text('Mal amanhecia o dia e nosso herói já estava de volta a estrada.', width/2, height/3.5);
     }
     if(this.cont > 30){
       text('Estava em direção a sua casa para reencontrar sua família que há tempos não via...', width/2, height/2.9);

@@ -28,11 +28,11 @@ class Intro2 {
     fill('#fff');
     textSize(22);
     if(this.cont > 15){
-      text('Mas foi surpreendido por alguns índios que acreditavam se tratar de uma invasão a suas terras.', width/2, height/3.4);
+      text('Mas foi surpreendido por alguns índios que acreditavam se tratar de uma invasão a suas terras.', width/2, height/4.2);
     }
     if(this.cont > 30){
-      text('Agora, com sua montaria abatida pelos nativos, nosso herói terá que passar por inimigos e', width/2, height/3.1);
-      text('obstáculos para sair vivo dessa!', width/2, height/2.8);
+      text('Agora, com sua montaria abatida pelos nativos, nosso herói terá que passar por inimigos e', width/2, height/3.4);
+      text('obstáculos para sair vivo dessa!', width/2, height/2.85);
     }
     if(this.cont >= 35){
       textSize(15);

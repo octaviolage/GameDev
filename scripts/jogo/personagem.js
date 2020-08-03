@@ -16,7 +16,7 @@ class Personagem extends Animacao{
       super.matriz = [[140,140]];
       contaPulo++;
       somPuloNormal.play();
-      this.pulo = -22;
+      this.pulo = -18;
     }
     else if (contaPulo == 1){
       super.frameAtual = 0;
@@ -73,7 +73,6 @@ class Personagem extends Animacao{
       inimigo.y,
       inimigo.largura * precisao,
       inimigo.altura * precisao);
-    
     return colisao;
   }
   

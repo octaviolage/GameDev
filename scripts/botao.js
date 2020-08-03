@@ -15,7 +15,7 @@ class Botao {
   
   _alteraCena() {
    this.botao.remove();
-    cenaAtual = 'intro1';
+    cenaAtual = 'jogo';
   }
   
 }
