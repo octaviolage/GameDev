@@ -47,3 +47,14 @@ Os inimigos foram reaproveitados de vários antigos. A maioria só foi recolorid
   <img width="75">
   <img src="imagens/Screenshots/Raposa.gif" width="200">
 </p>
+
+# PowerUps
+Coração: Aumenta 1 de saúde ao personagem. Máximo de 7 de saúde <img src="imagens/Screenshots/vida.gif" width="50"><br>
+Maça: Aumenta em 50 a pontuação do jogo  <img src="imagens/Screenshots/score.gif" width="50"><br>
+Gravidade Lunar: Diminui a gravidade para saltos maiores. <img src="imagens/Screenshots/gravidadeZero.gif" width="45">
+
+# Movimentação
+Pelo menos no atual estado do jogo, a movimentação se restringe a saltos. Sendo possível realizar até 2 saltos antes de tocar o solo novamente.
+Os saltos podem ser realizados com o "↑" (ArrowUp) ou com o clique do mouse (MousePressed)
+
+Sintam se a vontade para copiar, mergear e jogar!
