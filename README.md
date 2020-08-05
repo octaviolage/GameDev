@@ -4,7 +4,7 @@
  Projeto de desenvolvimento de um jogo em JavaScript através da biblioteca P5.js, durante o mini curso gratuito da Alura Cursos Online(#GameDev)
 
 <p align="center">
-  <img src="imagens/assets/telaInicial.png" width="450" title="hover text">
+  <img src="imagens/Screenshots/telaInicial.png" width="600" title="hover text">
 </p>
 
 # História
@@ -55,6 +55,6 @@ Gravidade Lunar: Diminui a gravidade para saltos maiores. <img src="imagens/Scre
 
 # Movimentação
 Pelo menos no atual estado do jogo, a movimentação se restringe a saltos. Sendo possível realizar até 2 saltos antes de tocar o solo novamente.
-Os saltos podem ser realizados com o "↑" (ArrowUp) ou com o clique do mouse (MousePressed)
+Os saltos podem ser realizados com o "↑" (ArrowUp) ou com o clique do mouse (MousePressed).
 
-Sintam se a vontade para copiar, mergear e jogar!
+# Sintam se a vontade para copiar, mergear e jogar!
