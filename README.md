@@ -1,7 +1,8 @@
 # GameDev 
-[![Série](https://img.shields.io/badge/OctavioLage-GameDev-blue)]()
+[![Série](https://img.shields.io/badge/OctavioLage-GameDev-blue)](https://octaviolage.github.io/GameDev/)
 
- Projeto de desenvolvimento de um jogo em JavaScript através da biblioteca P5.js, durante o mini curso gratuito da Alura Cursos Online(#GameDev)
+ Projeto de desenvolvimento de um jogo em JavaScript através da biblioteca P5.js, durante o mini curso gratuito da Alura Cursos Online (#GameDev).
+ <br>Você pode jogar <a href="https://octaviolage.github.io/GameDev/">clicando aqui</a>.
 
 <p align="center">
   <img src="imagens/Screenshots/telaInicial.png" width="600" title="hover text">
