@@ -14,7 +14,7 @@ O jogo se passa no velho oeste dos EUA, onde ainda havia conflitos entre cowboys
 </p>
   
 # Personagem
-O personagem principal do jogo, ainda sem um nome, teve sua movimentação baseada no "X", de Megaman X. Já sua aparecia foi inspiradas em cowboys do velho oeste, assim como os de Sunset Riders de SNES.
+O personagem principal do jogo, ainda sem um nome, teve sua movimentação baseada no "X", de Megaman X. Já sua aparência foi inspiradas em cowboys do velho oeste, assim como os de Sunset Riders de SNES.
 <p align="center">
   <img src="imagens/Screenshots/Personagem.gif" >
 </p>
